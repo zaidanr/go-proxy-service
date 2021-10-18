@@ -10,8 +10,6 @@ type User struct {
 
 type NewUser struct {
 	Username string `json:"username" binding:"required"`
-	Email    string `json:"email" binding:"required" validate:"email"`
-	Password string `json:"password" binding:"required"`
+	Email    string `json:"email" binding:"required,email"`
+	Password string `json:"password" binding:"required,min=8,max=255"`
 }
-
-//Test
