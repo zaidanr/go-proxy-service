@@ -1,4 +1,4 @@
-package controllers
+package user
 
 import (
 	"managed-proxy-server/helper"
@@ -10,8 +10,8 @@ import (
 )
 
 func GetUser(c *gin.Context) {
-	var user models.User
-	if result := models.DB.First(&user); result.Error != nil {
+	var user []models.User
+	if result := models.DB.Find(&user); result.Error != nil {
 		c.IndentedJSON(http.StatusNotFound, gin.H{"Error": result.Error.Error()})
 	} else {
 		c.IndentedJSON(http.StatusOK, result)

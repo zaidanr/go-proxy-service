@@ -4,7 +4,7 @@ import (
 	"log"
 	"managed-proxy-server/models"
 
-	jwt "github.com/appleboy/gin-jwt"
+	jwt "github.com/appleboy/gin-jwt/v2"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -26,4 +26,14 @@ func Login(c *gin.Context) (interface{}, error) {
 		}
 		return res, nil
 	}
+}
+
+func MapClaims(data interface{}) jwt.MapClaims {
+	if v, ok := data.(*models.User); ok {
+		return jwt.MapClaims{
+			"id":   v.Email,
+			"role": v.Role,
+		}
+	}
+	return jwt.MapClaims{}
 }

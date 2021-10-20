@@ -14,6 +14,7 @@ require (
 	github.com/appleboy/gin-jwt v2.5.0+incompatible
 	github.com/appleboy/gin-jwt/v2 v2.7.0
 	github.com/casbin/casbin v1.9.1 // indirect
+	github.com/casbin/casbin/v2 v2.37.4 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.13.0 // indirect
 	github.com/go-playground/universal-translator v0.17.0 // indirect
